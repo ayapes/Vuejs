@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{ message }}</p>
+        <p>{{value*10}}</p>
+        <p>
+            <!-- ↓これは使えない！！！！ -->
+            <a href="{{url}}">×：WINGSプロジェクト</a>
+        </p>
+        <p><a :href="url">○：WINGSプロジェクト</a></p>
+        <p><a v-bind:href="url">○：WINGSプロジェクト</a></p>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
+    <script src="js/hello.js"></script>
+</body>
+
+</html>
