@@ -11,9 +11,24 @@ Vue.createApp(
             return {
                 message: '皆さんこんにちわー！',
                 value:'5',
-                url:'https://wings.msn.to/'
+                url:'https://wings.msn.to/',
+                email: 'AyaYamaoka@ymok.me'
             };
-        }
+        },
+
+        computed:{
+            // プロパティ（値）として登録される
+            localEmail: function(){
+                return this.email.split('@')[0].toLowerCase();
+            }
+        },
+
+        methods: {
+            // メソッド（関数）として登録される。
+            localEmail2: function(){
+                return this.email.split('@')[0].toLowerCase();
+            }
+        },
     }
     // 材料ここまで
 ).mount('#app');
