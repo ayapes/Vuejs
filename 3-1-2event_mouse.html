@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <style>
+        #app{
+            margin: 5rem auto;
+            width: 400px;
+            text-align: center;
+        }
+
+        #app img{
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="path" alt="ロゴ画像" v-on:mouseenter="onmouseenter" v-on:mouseleave="onmouseleave">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
+    <script src="js/3-1-2event_mouse.js"></script>
+</body>
+</html>
