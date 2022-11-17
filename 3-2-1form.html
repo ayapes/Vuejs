@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+</head>
+<body>
+    <div id="app">
+        <form>
+            <label for="name">名前：</label>
+            <input type="text" id="name" v-model="myName">
+        </form>
+        <div>こんにちわ{{myName}}さん！</div>
+        <br>
+        <p>ラジオボタン</p>
+        <form>
+            <label for="dog">わんちゃん</label>
+                <input type="radio" id="dog" v-model="pet" value="いぬ"><br>
+                <label for="dog">ねこちゃん</label>
+                <input type="radio" id="cat" v-model="pet" value="ねこ"><br>
+                <label for="dog">ほか</label>
+                <input type="radio" id="other" v-model="pet" value="ほか">
+        </form>
+        <p>ぺっと：{{pet}}</p>
+        <br>
+        <p>チェックボックス</p>
+        <form>
+            <label for="agree">同意する</label>
+            <input type="checkbox" id="agree" v-model="agree">
+        </form>
+        <p>回答：{{agree}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
+    <script src="js/3-2-1form.js"></script>
+</body>
+</html>
