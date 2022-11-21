@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue.js</title>
 </head>
+
 <body>
     <div id="app">
+        <h2>双方向データバインディング</h2>
         <form>
             <label for="name">名前：</label>
             <input type="text" id="name" v-model="myName">
         </form>
         <div>こんにちわ{{myName}}さん！</div>
-        <br>
+        <hr>
         <p>ラジオボタン</p>
         <form>
             <label for="dog">わんちゃん</label>
-                <input type="radio" id="dog" v-model="pet" value="いぬ"><br>
-                <label for="dog">ねこちゃん</label>
-                <input type="radio" id="cat" v-model="pet" value="ねこ"><br>
-                <label for="dog">ほか</label>
-                <input type="radio" id="other" v-model="pet" value="ほか">
+            <input type="radio" id="dog" v-model="pet" value="いぬ"><br>
+            <label for="dog">ねこちゃん</label>
+            <input type="radio" id="cat" v-model="pet" value="ねこ"><br>
+            <label for="dog">ほか</label>
+            <input type="radio" id="other" v-model="pet" value="ほか">
         </form>
         <p>ぺっと：{{pet}}</p>
-        <br>
-        <p>チェックボックス</p>
+        <hr>
+        <p>チェックボックス（単一)
+        </p>
         <form>
             <label for="agree">同意する</label>
             <input type="checkbox" id="agree" v-model="agree">
         </form>
         <p>回答：{{agree}}</p>
+        <hr>
+        <p>チェックボックス（複数）</p>
+        <form>
+            <div>お使いのOSは？</div>
+            <label for="windows">Windows</label>
+            <input type="checkbox" id="windows" value="Windows" v-model="os"><br>
+            <label for="linux">Linux</label>
+            <input type="checkbox" id="linux" value="Linux" v-model="os"><br>
+            <label for="mac">macOS</label>
+            <input type="checkbox" id="mac" value="macOS" v-model="os">
+            <p>回答：{{ os }}</p>
+        </form>
+        <hr>
+        <p>選択ボックス</p>
+        <form>
+            <div>おつかいのOSは？</div>
+            <select id="os2" v-model="os2">
+                <option value="">OSを選択してください</option>
+                <option>Windows</option>
+                <option>Linux</option>
+                <option>macOS</option>
+            </select>
+        </form>
+        <p>回答：{{ os2 }}</p>
+        <hr>
+        <p>選択ボックス（複数選択）</p>
+        <form>
+            <div>おつかいのOSは？<p>複数選択時はCtrlキーを押しながらクリックしてください。</p>
+            </div>
+            <select id="os3" v-model="os3" multiple size="6">
+                <option value="">OSを選択してください</option>
+                <option>Windows</option>
+                <option>Linux</option>
+                <option>macOS</option>
+            </select>
+        </form>
+        <p>回答：{{ os3 }}</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
     <script src="js/3-2-1form.js"></script>
 </body>
+
 </html>

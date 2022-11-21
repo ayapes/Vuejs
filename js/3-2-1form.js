@@ -4,7 +4,10 @@ Vue.createApp({
         return{
             myName:'匿名',
             pet:'いぬ',
-            agree:true
+            agree:false,
+            os:['Windows','macOS'],
+            os2:'',
+            os3:['Windows','macOS'],
         };
     }
 }).mount('#app')
