@@ -6,6 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue.js</title>
+    <style>
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 2s;
+        }
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,6 +54,17 @@
         <div v-else-if="holiday==='labor'">11月23日。勤労をたつとび、生産を祝い、国民たがいに感謝しあう</div>
         <div v-else>なにも選択されていません。</div>
 
+        <hr>
+        
+            <button v-on:click="isActive=!isActive">切り替えボタン</button>
+            <transition name="fade" appear>
+        <div id="panel2" v-if="isActive">
+            <h3>テストテストテスト</h3>
+            <p>あいうえおかきくけこさしすせそ</p>
+            <p>たちつてとなにぬねのはひふへほ</p>
+            <p>まみむめもやゆよらりるれろわをん</p>
+        </div>
+    </transition>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
     <script src="js/3-3-1if.js"></script>

@@ -3,6 +3,7 @@ Vue.createApp({
         return{
             show:true,
             holiday:'',
+            isActive:true,
         };
     }
 }).mount('#app');

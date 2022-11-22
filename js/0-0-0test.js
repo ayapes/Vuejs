@@ -1,7 +1,7 @@
 Vue.createApp({
     data(){
         return{
-            isActive:true,
+            show:true,
         };
     }
-}).mount('#app');
+}).mount('#demo');
