@@ -1,0 +1,55 @@
+#wrapper{
+height: 1000px;
+}
+
+#panel ,
+#panel2{
+    border: 1px solid #000;
+    width: 350px;
+    overflow: hidden;
+  }
+  
+  /* スライドアップ／スライドダウン */
+  
+  .flag-enter-active, .flag-leave-active {
+    transition: opacity 2s;
+  }
+  
+  .flag-enter-from,
+  .flag-leave-to {
+    opacity: 0.0;
+  }
+  
+  .flag-enter-to,
+  .flag-leave-from {
+    opacity: 1.0;
+  }
+
+  .show{
+    border:1px solid red;
+width: 200px;
+height: 50px;
+overflow: hidden;
+}
+
+  .show-enter-active, .show-leave-active {
+    transition: height 1s;
+  }
+  
+  .show-enter-from,
+  .show-leave-to {
+    height: 0px;
+  }
+  
+  .show-enter-to,
+  .show-leave-from {
+    height: 50px;
+  }
+  
+  /* .flag-leave-from {
+    height: 180px;
+  } */
+  
+  /* .flag-leave-to {
+    height: 0px;
+  }  */
