@@ -19,7 +19,7 @@
 
 <body>
     <div id="app">
-        <table class="table table2">
+<table class="table table2">
             <thead>
                 <th>No</th>
                 <th>ISBN</th>
@@ -29,6 +29,26 @@
             <tbody>
                 <!-- 仮変数「b」には規定で配列要素がセットされます。仮変数を２つ用意したら「配列要素＆インデックス番号」のセットされます。便利ね！ 「ｂ：配列要素＆ｋ：インデックス番号」-->
                 <tr v-for="(b, k) in books">
+                    <td>{{ k + 1 }}</td>
+                    <td>{{ b.isbn }}</td>
+                    <td>{{ b.title }}</td>
+                    <td>{{ b.price }}円</td>
+                </tr>
+            </tbody>
+        </table> 
+
+        <hr>
+        <p style="text-align: center;">2500円以上の価格の本リスト</p>
+        <table class="table table2">
+            <thead>
+                <th>No</th>
+                <th>ISBN</th>
+                <th>書名</th>
+                <th>価格</th>
+            </thead>
+            <tbody>
+                <!-- 仮変数「b」には規定で配列要素がセットされます。仮変数を２つ用意したら「配列要素＆インデックス番号」のセットされます。便利ね！ 「ｂ：配列要素＆ｋ：インデックス番号」-->
+                <tr v-for="(b, k) in expenciveBooks">
                     <td>{{ k + 1 }}</td>
                     <td>{{ b.isbn }}</td>
                     <td>{{ b.title }}</td>

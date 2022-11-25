@@ -3,6 +3,7 @@ Vue.createApp({
 
         return{
             flag:true,
+            flag2:true,
             show:true,
         };
     },
@@ -12,7 +13,7 @@ Vue.createApp({
             this.flag = !this.flag;
         },
         onclick2(){
-            this.flag = !this.flag;
+            this.flag2 = !this.flag2;
         }
 
     },

@@ -11,17 +11,22 @@ height: 1000px;
   
   /* スライドアップ／スライドダウン */
   
-  .flag-enter-active, .flag-leave-active {
+  .flag-enter-active, .flag-leave-active,
+  .flag2-enter-active, .flag2-leave-active {
     transition: opacity 2s;
   }
   
   .flag-enter-from,
-  .flag-leave-to {
+  .flag-leave-to,
+  .flag2-enter-from,
+  .flag2-leave-to {
     opacity: 0.0;
   }
   
   .flag-enter-to,
-  .flag-leave-from {
+  .flag-leave-from,
+  .flag2-enter-to,
+  .flag2-leave-from {
     opacity: 1.0;
   }
 

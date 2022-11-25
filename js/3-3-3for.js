@@ -6,7 +6,12 @@ Vue.createApp({
                 {
                     isbn:'978-4-7981-578\57-3',
                     title:'JavaScript逆引きレシピ',
-                    price:2800
+                    price:1980
+                },
+                {
+                    isbn:'978-4-7981-578\57-3',
+                    title:'JavaScript逆引きレシピ',
+                    price:1300
                 },
                 {
                     isbn:'978-4-7981-578\57-3',
@@ -16,19 +21,21 @@ Vue.createApp({
                 {
                     isbn:'978-4-7981-578\57-3',
                     title:'JavaScript逆引きレシピ',
-                    price:2800
+                    price:4500
                 },
                 {
                     isbn:'978-4-7981-578\57-3',
                     title:'JavaScript逆引きレシピ',
-                    price:2800
-                },
-                {
-                    isbn:'978-4-7981-578\57-3',
-                    title:'JavaScript逆引きレシピ',
-                    price:2800
+                    price:2499
                 },
             ]
         };
+    },
+
+    computed:{
+        //2500円以上の書籍情報を取得する算出プロパティー
+        expenciveBooks(){
+            return  this.books.filter( b => b.price >= 2500);
+        }
     }
 }).mount('#app');
