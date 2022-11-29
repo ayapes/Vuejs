@@ -15,7 +15,7 @@ const MyParent = {
   },
   template: `
     <div>こんにちは、Comp1！</div>
-    <my-child />
+    <my-child>
   `
 };
 
