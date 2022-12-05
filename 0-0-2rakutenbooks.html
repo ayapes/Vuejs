@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js</title>
+    <style>
+        *,
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            line-height: 100%;
+            font-size: 10px;
+        }
+
+        #app {
+            margin: 3rem auto;
+            width: 700px;
+        }
+
+        .wrapper {
+            border: 1px solid #666;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            margin-bottom: 2rem;
+
+        }
+
+        .left {
+            width: 200px;
+            margin: 30px 0;
+        }
+
+        .img{
+            text-align: center;
+        }
+
+        .img img{
+            max-width: 100%;
+            box-shadow: 0px 0px 6px 4px rgba(117, 117, 117, 0.64);
+        } 
+
+        .right {
+            width: 400px;
+            margin: 30px 0;
+            position:relative;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            padding-bottom: 10px;
+            color:rgb(38, 38, 252);
+        }
+
+        .auther{
+            font-size:1.3rem;
+            padding-bottom: 10px;
+        }
+
+        .price{
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: right;
+            color:rgb(185, 42, 42);
+        }
+
+        .price>span{
+            font-size: 1.3rem;
+            color:rgb(83, 83, 83);
+        }
+
+        .cart{
+            position: absolute;
+            bottom:0;
+            left:0;
+        }
+
+        .cart img:hover{
+            opacity: 0.6;
+            cursor : pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <rakuten-books book-img="001" book-title="笑犬楼vs.偽伯爵" book-auther="筒井 康隆, 蓮實 重彦" book-price="1650">
+        </rakuten-books>
+        <rakuten-books book-img="002" book-title="人類よさらば （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="814">
+        </rakuten-books>
+        <rakuten-books book-img="003" book-title="馬の首風雲録 （徳間文庫）" book-auther="筒井康隆" book-price="946">
+        </rakuten-books>
+        <rakuten-books book-img="004" book-title="あるいは酒でいっぱいの海 （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="693">
+        </rakuten-books>
+        <rakuten-books book-img="005" book-title="誰にもわかるハイデガー 文学部唯野教授・最終講義 （河出文庫）" book-auther="筒井康隆" book-price="759">
+        </rakuten-books>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.29/dist/vue.global.js"></script>
+    <script src="js/0-0-2rakutenbooks.js"></script>
+</body>
+
+</html>
