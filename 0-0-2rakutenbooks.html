@@ -31,8 +31,9 @@
         }
 
         .left {
-            width: 200px;
-            margin: 30px 0;
+            width: 130px;
+            margin: 15px 0;
+            border:1px solid red;
         }
 
         .img{
@@ -45,33 +46,73 @@
         } 
 
         .right {
-            width: 400px;
-            margin: 30px 0;
+            width: 530px;
+            margin: 15px 0;
             position:relative;
         }
 
         .title {
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: bold;
             padding-bottom: 10px;
             color:rgb(38, 38, 252);
+            display:flex;
+            align-items: center;
+        }
+
+        .kami{
+            /* width: 50px; */
+            text-align: center;
+            display: inline-block;
+            background-color:red;
+            color:#FFF;
+            height:20px;
+            line-height: 2rem;
+            padding: 0 1rem;
+            margin-right: 0.5rem;
+            font-weight: 100;
+            font-size:1.2rem;
+        }
+
+        .denshi{
+            /* width: 50px; */
+            text-align: center;
+            display: inline-block;
+            border:1px solid red;
+            color:red;
+            height:2rem;
+            line-height: 2rem;
+            padding: 0 1rem;
+            margin-right: 1rem;
+            font-weight: 100;
+            font-size:1.2rem;
+            white-space: nowrap;
         }
 
         .auther{
             font-size:1.3rem;
-            padding-bottom: 10px;
+            padding-bottom: 20px;
+        }
+
+        .memo{
+            font-size:1.2rem;
+            color:rgb(153, 153, 153);
+            padding-bottom: 5px;
         }
 
         .price{
             font-size: 1.8rem;
             font-weight: bold;
-            text-align: right;
             color:rgb(185, 42, 42);
         }
 
-        .price>span{
+        .tax{
             font-size: 1.3rem;
-            color:rgb(83, 83, 83);
+            color:rgb(190, 190, 190);
+        }
+
+        .ship{
+            font-size: 1.5rem;
         }
 
         .cart{
@@ -89,15 +130,15 @@
 
 <body>
     <div id="app">
-        <rakuten-books book-img="001" book-title="笑犬楼vs.偽伯爵" book-auther="筒井 康隆, 蓮實 重彦" book-price="1650">
+        <rakuten-books book-img="001" book-title="笑犬楼vs.偽伯爵" book-auther="筒井 康隆, 蓮實 重彦" book-price="1650" book-type="kami" book-memo1="2022年12月21日頃発売 ／ 新潮社 ／ 単行本">
         </rakuten-books>
-        <rakuten-books book-img="002" book-title="人類よさらば （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="814">
+        <rakuten-books book-img="002" book-title="人類よさらば （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="814" book-type="denshi" book-memo1="2022年05月27日発売 ／ 小説・エッセイ ／ 河出書房新社 ／ 対応端末：電子書籍リーダー, Android, iPhone, iPad">
         </rakuten-books>
-        <rakuten-books book-img="003" book-title="馬の首風雲録 （徳間文庫）" book-auther="筒井康隆" book-price="946">
+        <rakuten-books book-img="003" book-title="馬の首風雲録 （徳間文庫）" book-auther="筒井康隆" book-price="946" book-type="kami" book-memo1="シリーズ名： 馬の首風雲録" book-memo2="2022年10月07日発売 ／ 徳間書店 ／ 文庫">
         </rakuten-books>
-        <rakuten-books book-img="004" book-title="あるいは酒でいっぱいの海 （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="693">
+        <rakuten-books book-img="004" book-title="あるいは酒でいっぱいの海 （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="693" book-type="denshi" book-memo1="2021年09月03日発売 ／ 小説・エッセイ ／ 河出書房新社 ／ 対応端末：電子書籍リーダー, Android, iPhone, iPad">
         </rakuten-books>
-        <rakuten-books book-img="005" book-title="誰にもわかるハイデガー 文学部唯野教授・最終講義 （河出文庫）" book-auther="筒井康隆" book-price="759">
+        <rakuten-books book-img="005" book-title="誰にもわかるハイデガー 文学部唯野教授・最終講義 （河出文庫）" book-auther="筒井康隆" book-price="759" book-type="kami" book-memo1="シリーズ名： 誰にもわかるハイデガー" book-memo2="2022年03月08日頃発売 ／ 河出書房新社 ／ 文庫">
         </rakuten-books>
     </div>
 
