@@ -10,9 +10,9 @@ Vue.createApp({})
     <span v-show="bookType1" v-bind:class="{kami}">本</span>
     <span v-show="bookType2" v-bind:class="{denshi}">電子</span>{{ bookTitle }}</p>
     <p v-bind:class="{auther}">{{ bookAuther }}</p>
-    <p class="memo">{{ bookMemo1 }}</p>
+    <p class="memo" v-text="bookMemo1"></p>
     <p class="memo">{{ bookMemo2 }}</p>
-    <p v-bind:class="{price}">{{ bookPrice }}円<span class="tax">（税込）</span><span class="ship" v-text="shipping"></span></p>
+    <p class="price">{{ bookPrice }}円<span class="tax">（税込）</span><span class="ship" v-text="shipping"></span></p>
     <p v-bind:class="{cart}"><img src="./img/rakutenbooks/cart.png"></p>
     </div>
 </div>`,
@@ -26,7 +26,7 @@ Vue.createApp({})
                 right: true,
                 title: true,
                 auther: true,
-                price: true,
+                // price: true,
                 cart: true,
                 tax: true,
             }
