@@ -28,11 +28,12 @@ denshi: false,
 }
 },
 methods: {
-
+    
 },
 computed: {
 imgSrc() {
 const img = require("../assets/rakutenbooks/" + this.bookImg + ".jpg");
+console.log("あああ");
 return img;
 },
 
@@ -53,6 +54,7 @@ shipping() {
 if (this.bookType === "kami") {
 return "送料無料";
 } else { return ""; }
+
 
 }
 },
