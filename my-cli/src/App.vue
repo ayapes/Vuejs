@@ -1,71 +1,56 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Vue.js Appにようこそ" />
-    <HelloWorld msg2="Vue.js Appにようこそ★" />
-    <GoodBye></GoodBye>
-    <RakutenBooks bookImg="001" book-title="aaa" book-auther="筒井 康隆, 蓮實 重彦" book-price="1650" bookType="kami"
-        bookMemo1="2022年12月21日頃発売 ／ 新潮社 ／ 単行本">
-    </RakutenBooks>
-    <RakutenBooks book-img="002" book-title="人類よさらば （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="814"
-        book-type="denshi" book-memo1="2022年05月27日発売 ／ 小説・エッセイ ／ 河出書房新社 ／ 対応端末：電子書籍リーダー, Android, iPhone, iPad">
-    </RakutenBooks>
-    <RakutenBooks book-img="003" book-title="馬の首風雲録 （徳間文庫）" book-auther="筒井康隆" book-price="946" book-type="kami"
-        book-memo1="シリーズ名： 馬の首風雲録" book-memo2="2022年10月07日発売 ／ 徳間書店 ／ 文庫">
-    </RakutenBooks>
-    <RakutenBooks book-img="004" book-title="あるいは酒でいっぱいの海 （河出文庫）[電子書籍版]" book-auther="筒井康隆" book-price="693"
-        book-type="denshi" book-memo1="2021年09月03日発売 ／ 小説・エッセイ ／ 河出書房新社 ／ 対応端末：電子書籍リーダー, Android, iPhone, iPad">
-    </RakutenBooks>
-    <RakutenBooks book-img="005" book-title="誰にもわかるハイデガー 文学部唯野教授・最終講義 （河出文庫）" book-auther="筒井康隆" book-price="759"
-        book-type="kami" book-memo1="シリーズ名： 誰にもわかるハイデガー" book-memo2="2022年03月08日頃発売 ／ 河出書房新社 ／ 文庫">
-    </RakutenBooks>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-import GoodBye from './components/GoodBye.vue'
-import RakutenBooks from './components/RakutenBooks.vue'
-
-export default {
+    <!-- コンポーネントへのv-forの場合、複製されたコンポーネントを区別する重複しないkey属性が必要 -->
+    <BookCard v-for="book in books"
+              v-bind:bookData = "book.Item" 
+              v-bind:key="book.Item.isbn"/>
+              <hr>
+    <!-- P.88 v-forから配列要素だけでなく、その配列の各キーやインデックス番号が取れる -->
+    <!-- bookDataていう空のオブジェクトにItem群をほりこむ -->
+    <BookCard v-for="(book, key,index ) in books"
+              v-bind:bookData = "book.Item" 
+              v-bind:key="index" />
+  </template>
+  
+  <script>
+  // import 外部ファイルを読み込む
+  import BookCard from './components/BookCard.vue'
+  // export 外部ファイルに公開する
+  export default {
     name: 'App',
     components: {
-        HelloWorld,
-        GoodBye,
-        RakutenBooks
+      BookCard
     },
-    data(){
-        return{
-            aaa:''
-        }
+    data () {
+      return {
+      // 初回ロード時に渡すダミーデータ
+       title:'あああ',
+       ImageUrl:'',
+       bookData : {}, //空のオブジェクト
+       books : [], // 空の配列
+      }
     },
+    // ライフサイクルフック（実行タイミングの指定）
+    // 非同期処理を含む関数はmountedの中にに書く
     mounted: function () {
-        const RAKUTEN_API = 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&title=%E7%AD%92%E4%BA%95%E5%BA%B7%E9%9A%86&booksGenreId=001&applicationId=1045443226673597322'
-        fetch(RAKUTEN_API)
-            .then(response => response.json())
-            .then(data => {
-                const book = data.Items[2].Item;
-                this.aaa =book.title; 
-            })
-            
-    }
-
-}
-</script>
-
-<style>
-body {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    line-height: 100%;
-    font-size: 10px;
-}
-
-#app {
+      const RAKUTEN_API = 'https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&title=%E7%AD%92%E4%BA%95%E5%BA%B7%E9%9A%86&booksGenreId=001&applicationId=1045443226673597322'
+      fetch(RAKUTEN_API)
+        .then(response => response.json())
+        .then(data => {
+          // 複数の本のデータが入った配列
+          const books = data.Items
+          this.books = books
+        })
+      }
+  }
+  </script>
+  
+  <style>
+  #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
     margin-top: 60px;
-}
-</style>
+  }
+  </style>
