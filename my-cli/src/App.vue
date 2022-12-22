@@ -1,11 +1,13 @@
 <template>
+    <!-- 楽天ブックス
+        Items(検索結果)>Item(一冊ずつ)>Item>細かい情報 -->
     <!-- コンポーネントへのv-forの場合、複製されたコンポーネントを区別する重複しないkey属性が必要 -->
     <BookCard v-for="book in books"
               v-bind:bookData = "book.Item" 
               v-bind:key="book.Item.isbn"/>
               <hr>
     <!-- P.88 v-forから配列要素だけでなく、その配列の各キーやインデックス番号が取れる -->
-    <!-- bookDataていう空のオブジェクトにItem群をほりこむ -->
+    <!-- bookDataていう空のオブジェクトにItem(細かい情報の方)群をほりこむ -->
     <BookCard v-for="(book, key,index ) in books"
               v-bind:bookData = "book.Item" 
               v-bind:key="index" />
@@ -23,8 +25,6 @@
     data () {
       return {
       // 初回ロード時に渡すダミーデータ
-       title:'あああ',
-       ImageUrl:'',
        bookData : {}, //空のオブジェクト
        books : [], // 空の配列
       }
@@ -37,8 +37,8 @@
         .then(response => response.json())
         .then(data => {
           // 複数の本のデータが入った配列
-          const books = data.Items
-          this.books = books
+          const books = data.Items;
+          this.books = books;//books[]にほりこんでる
         })
       }
   }
