@@ -1,4 +1,5 @@
 <template>
+    <!-- テストでコメントアウトしています -->
     <div class="container">
         <img v-bind:src="bookData.mediumImageUrl" alt="">
         <div>
