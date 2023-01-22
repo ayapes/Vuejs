@@ -1,10 +1,10 @@
 <template>
     <div>
-        Hello! This is HOME
+        Hello! This is PlanView
     </div>
 </template>
 <script>
 export default {
-    name: 'HomeComponent'
+    name: 'PlanView'
 }
 </script>
