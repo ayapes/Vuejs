@@ -1,8 +1,8 @@
 <template>
     <v-app>
         <v-main>
-            <div id="slider" class="my-0 mx-auto" style="width: 840px;">
-                <v-carousel cycle height="400" hide-delimiter-background :show-arrows="false" hide-delimiters>
+            <div id="slider" class="my-0 mx-auto" style="max-width: 840px;width:100%;">
+                <v-carousel cycle hide-delimiter-background :show-arrows="false" hide-delimiters>
                     <v-carousel-item v-for="item in items" :key="item">
                         <v-img contain :src="item"></v-img>
                     </v-carousel-item>
@@ -15,10 +15,10 @@
 </template>
 
 <script>
-  export default {
+export default {
     name: 'HomeView',
     data: () => ({
-      items: [
+        items: [
             {
                 src: '../../img/slide1.jpg'
             },
@@ -31,5 +31,5 @@
 
         ],
     }),
-  }
+}
 </script>

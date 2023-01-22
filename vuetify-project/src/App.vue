@@ -1,6 +1,6 @@
 <template>
   <v-app color="background">
-    <v-main align="center" class="pa-10">
+    <v-main align="center">
       <v-col align="center" class="my-5">
         <router-link to="/"><v-img src="../img/logo.png" max-width="306px" /></router-link>
       </v-col>
